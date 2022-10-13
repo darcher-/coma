@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { __appdata } from '@coma/resources';
+import { __appdata } from '@coma-lib/resources';
 
 export function App(): React.ReactElement {
   const [count, setCount] = React.useState(0);

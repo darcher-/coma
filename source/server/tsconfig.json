@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "dist",
+    "esModuleInterop": true,
   },
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.json"
 }

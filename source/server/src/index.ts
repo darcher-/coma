@@ -1,4 +1,4 @@
-import { __appdata } from '@coma/resources';
+import { __appdata } from '@coma-lib/resources';
 import cors from 'cors';
 import express from 'express';
 import { join } from 'path';
