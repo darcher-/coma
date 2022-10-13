@@ -8,8 +8,9 @@
     "moduleResolution": "Node",
     "noImplicitAny": true,
     "paths": {
-      "@coma/*": ["source/*"]
+      "@coma-lib/*": ["source/*"]
     },
+    "types": ["node", "ts-node"],
     "removeComments": true,
     "resolveJsonModule": true,
     "strictNullChecks": true,

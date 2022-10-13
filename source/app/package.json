@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@coma/resources": "1.0.0",
+    "@coma-lib/resources": "1.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -10,7 +10,7 @@
   },
   "license": "UNLICENSED",
   "main": "./src/index.tsx",
-  "name": "@coma/app",
+  "name": "@coma-lib/app",
   "private": true,
   "version": "1.0.0"
 }
