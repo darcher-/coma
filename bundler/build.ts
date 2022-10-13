@@ -1,15 +1,15 @@
-import { BuildResult, build } from 'esbuild';
+import { BuildOptions, BuildResult, build } from 'esbuild';
 
 import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import { sassPlugin } from 'esbuild-sass-plugin';
 
-interface BuildOptions {
+interface BuildEnv {
   env: 'production' | 'development';
 }
 
-function buildProps({ env }: BuildOptions) {
+function buildProps({ env }: BuildEnv): Partial<BuildOptions> {
   return {
     define: { 'process.env.NODE_ENV': `"${env}"` },
     bundle: env.includes('prod'),
@@ -20,7 +20,7 @@ function buildProps({ env }: BuildOptions) {
 
 export async function buildStyles({
   env,
-}: BuildOptions): Promise<void | BuildResult> {
+}: BuildEnv): Promise<void | BuildResult> {
   await build({
     ...buildProps({ env }),
     entryPoints: ['source/resources/src/styles/index.scss'],
@@ -40,9 +40,7 @@ export async function buildStyles({
   });
 }
 
-export async function buildApp({
-  env,
-}: BuildOptions): Promise<void | BuildResult> {
+export async function buildApp({ env }: BuildEnv): Promise<void | BuildResult> {
   await build({
     ...buildProps({ env }),
     entryPoints: ['source/app/src/index.tsx'],
@@ -52,7 +50,7 @@ export async function buildApp({
 
 export async function buildServer({
   env,
-}: BuildOptions): Promise<void | BuildResult> {
+}: BuildEnv): Promise<void | BuildResult> {
   await build({
     ...buildProps({ env }),
     entryPoints: ['source/server/src/index.ts'],
@@ -63,7 +61,7 @@ export async function buildServer({
   });
 }
 
-(async function (options: BuildOptions): Promise<void | BuildResult> {
+(async function (options: BuildEnv): Promise<void | BuildResult> {
   await Promise.all([
     buildStyles(options),
     buildApp(options),
