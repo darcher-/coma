@@ -18,3 +18,5 @@ coverage
 .npm
 
 .eslintcache
+
+.DS_Store
