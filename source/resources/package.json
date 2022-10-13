@@ -1,0 +1,7 @@
+{
+  "license": "UNLICENSED",
+  "main": "./src/index.ts",
+  "name": "@coma/resources",
+  "private": true,
+  "version": "1.0.0"
+}

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["ESNext", "DOM"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "paths": {
+      "@coma/*": ["source/*"]
+    },
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "target": "ES2017"
+  },
+  "exclude": ["node_modules", "**/node_modules/*", "**/dist", "bundler"],
+  "include": ["**/*"]
+}
