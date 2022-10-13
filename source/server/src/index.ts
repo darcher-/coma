@@ -6,7 +6,7 @@ import { join } from 'path';
 express()
   .use(cors())
   .use(express.static(join(__dirname, '../../app/dist')))
-  .get('*', (req: any, resources: any) =>
+  .get('*', (_req: any, resources: any) =>
     resources.sendFile(join(__dirname, '../../app/dist', 'index.html')),
   )
   .listen(__appdata.port, () =>
