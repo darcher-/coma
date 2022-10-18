@@ -31,18 +31,18 @@
   "private": true,
   "scripts": {
     "app": "yarn workspace @coma-lib/app",
-    "build": "ts-node ./bundler/build.ts",
-    "cycle": "yarn install && yarn build && yarn start",
+    "build": "ts-node ./esb/build.ts",
     "docker": "docker build . -t coma-lib",
-    "format": "prettier **/*.(ts|tsx|scss) --write",
+    "format": "prettier **/*.ts --write",
     "lint": "eslint . --ext .ts",
     "lintfix": "eslint . --ext .ts --fix",
-    "resources": "yarn workspace @coma-lib/resources",
-    "server": "yarn workspace @coma-lib/server",
-    "start": "node ./source/server/dist/express.js"
+    "res": "yarn workspace @coma-lib/res",
+    "serve": "yarn && yarn build && yarn start",
+    "start": "node ./pkg/svr/dist/express.js",
+    "svr": "yarn workspace @coma-lib/svr"
   },
   "version": "1.0.0",
   "workspaces": [
-    "source/*"
+    "pkg/*"
   ]
 }
