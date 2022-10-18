@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@coma-lib/resources": "1.0.0",
+    "@coma-lib/res": "1.0.0",
     "cors": "2.8.5",
     "express": "4.18.2"
   },
@@ -10,7 +10,7 @@
   },
   "license": "UNLICENSED",
   "main": "./src/index.ts",
-  "name": "@coma-lib/server",
+  "name": "@coma-lib/svr",
   "private": true,
   "version": "1.0.0"
 }

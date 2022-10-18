@@ -8,7 +8,7 @@
     "moduleResolution": "Node",
     "noImplicitAny": true,
     "paths": {
-      "@coma-lib/*": ["source/*"]
+      "@coma-lib/*": ["pkg/*"]
     },
     "types": ["node", "ts-node"],
     "removeComments": true,
@@ -16,6 +16,6 @@
     "strictNullChecks": true,
     "target": "ES2017"
   },
-  "exclude": ["node_modules", "**/node_modules/*", "**/dist", "bundler"],
+  "exclude": ["node_modules", "**/node_modules/*", "**/dist", "esb"],
   "include": ["**/*"]
 }

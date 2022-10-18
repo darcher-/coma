@@ -23,15 +23,15 @@ export async function buildStyles({
 }: BuildEnv): Promise<void | BuildResult> {
   await build({
     ...buildProps({ env }),
-    entryPoints: ['source/resources/src/styles/index.scss'],
-    outfile: 'source/app/dist/styles.min.css',
+    entryPoints: ['pkg/res/src/style/index.scss'],
+    outfile: 'pkg/app/dist/coma.min.css',
     plugins: [
       sassPlugin({
-        async transform(source: string, resolveDir: string): Promise<string> {
+        async transform(src: string, resolveDir: string): Promise<string> {
           const { css } = await postcss([
             autoprefixer,
             postcssPresetEnv({ stage: 0 }),
-          ]).process(source, { from: resolveDir });
+          ]).process(src, { from: resolveDir });
 
           return css;
         },
@@ -43,8 +43,8 @@ export async function buildStyles({
 export async function buildApp({ env }: BuildEnv): Promise<void | BuildResult> {
   await build({
     ...buildProps({ env }),
-    entryPoints: ['source/app/src/index.tsx'],
-    outfile: 'source/app/dist/scripts.min.js',
+    entryPoints: ['pkg/app/src/index.tsx'],
+    outfile: 'pkg/app/dist/coma.min.js',
   });
 }
 
@@ -53,8 +53,8 @@ export async function buildServer({
 }: BuildEnv): Promise<void | BuildResult> {
   await build({
     ...buildProps({ env }),
-    entryPoints: ['source/server/src/index.ts'],
-    outfile: 'source/server/dist/express.js',
+    entryPoints: ['pkg/svr/src/index.ts'],
+    outfile: 'pkg/svr/dist/express.js',
     external: ['express'],
     platform: 'node',
     target: 'node18.10.0',

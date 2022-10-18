@@ -1,7 +1,7 @@
 {
   "license": "UNLICENSED",
   "main": "./src/index.ts",
-  "name": "@coma-lib/resources",
+  "name": "@coma-lib/res",
   "private": true,
   "version": "1.0.0"
 }

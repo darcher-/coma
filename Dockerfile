@@ -4,9 +4,9 @@ WORKDIR /usr/src/app
 
 COPY ./package.json .
 COPY ./package-lock.json .
-COPY ./source/app/package.json ./source/app/
-COPY ./source/resources/package.json ./source/resources/
-COPY ./source/server/package.json ./source/server/
+COPY ./pkg/app/package.json ./pkg/app/
+COPY ./pkg/res/package.json ./pkg/res/
+COPY ./pkg/svr/package.json ./pkg/svr/
 RUN yarn
 
 COPY . .
