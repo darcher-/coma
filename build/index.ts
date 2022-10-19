@@ -18,7 +18,9 @@ function buildProps({ env }: BuildEnv): Partial<BuildOptions> {
   };
 }
 
-export async function buildStyles({ env }: BuildEnv): Promise<void | BuildResult> {
+export async function buildStyles({
+  env,
+}: BuildEnv): Promise<void | BuildResult> {
   await build({
     ...buildProps({ env }),
     entryPoints: ["pkgs/lib/src/styles/index.scss"],
@@ -26,10 +28,10 @@ export async function buildStyles({ env }: BuildEnv): Promise<void | BuildResult
     plugins: [
       sassPlugin({
         async transform(src: string, resolveDir: string): Promise<string> {
-          const { css } = await postcss([autoprefixer, postcssPresetEnv({ stage: 0 })]).process(
-            src,
-            { from: resolveDir },
-          );
+          const { css } = await postcss([
+            autoprefixer,
+            postcssPresetEnv({ stage: 0 }),
+          ]).process(src, { from: resolveDir });
 
           return css;
         },
@@ -46,7 +48,9 @@ export async function buildApp({ env }: BuildEnv): Promise<void | BuildResult> {
   });
 }
 
-export async function buildServer({ env }: BuildEnv): Promise<void | BuildResult> {
+export async function buildServer({
+  env,
+}: BuildEnv): Promise<void | BuildResult> {
   await build({
     ...buildProps({ env }),
     entryPoints: ["pkgs/api/src/index.ts"],
@@ -58,5 +62,9 @@ export async function buildServer({ env }: BuildEnv): Promise<void | BuildResult
 }
 
 (async function (options: BuildEnv): Promise<void | BuildResult> {
-  await Promise.all([buildStyles(options), buildApp(options), buildServer(options)]);
+  await Promise.all([
+    buildStyles(options),
+    buildApp(options),
+    buildServer(options),
+  ]);
 })({ env: "production" });

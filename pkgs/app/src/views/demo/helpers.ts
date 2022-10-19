@@ -11,7 +11,9 @@ export function updateRemainsList(
     : list;
 }
 
-export function getFocusDOMRect(activeNode: HTMLElement): { [k: string]: string } {
+export function getFocusDOMRect(activeNode: HTMLElement): {
+  [k: string]: string;
+} {
   return Object.entries(activeNode.getBoundingClientRect()).reduce(
     (collection, [key, value]) => ({
       ...collection,

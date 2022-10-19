@@ -1,4 +1,4 @@
-import { Meta } from './types';
+import { Meta } from "./types";
 
 export const _coma: Meta = {
   name: "Coma",

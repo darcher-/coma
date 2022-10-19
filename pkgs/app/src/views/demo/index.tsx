@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import { Fields, Form } from "./demo";
 import { _copy, _msg, _props } from "./fixtures";
-import { getFocusDOMRect, updateRemainsList } from "./helpers";
 
+import { Fields } from "./demo";
 import { Link } from "react-router-dom";
+import { updateRemainsList } from "./helpers";
 
 export function Demo(): React.ReactElement {
   const [state, setState] = React.useState<Fields>({
@@ -20,26 +20,33 @@ export function Demo(): React.ReactElement {
     tracker: React.useRef(null),
   });
 
-  window.addEventListener('scroll', ((event) => 
-    setState((prev) => ({
-      ...prev,
-      focused: {
-        opacity: "0",
-        transform: "scale(.001)"
-      },
-    }))))
+  React.useEffect(() => {
+    function hideFocusNode() {
+      setState((prev) => ({
+        ...prev,
+        focused: {
+          opacity: "0",
+          transform: "scale(.001)",
+        },
+      }));
+    }
+
+    window.addEventListener("scroll", hideFocusNode);
+
+    return () => window.removeEventListener("scroll", hideFocusNode);
+  }, []);
 
   function getFocusedStyles(event: any) {
     const { top, left, width, height } = (
-      ["checkbox", "radio", "text", "select-one", "tel", "email"].includes(event.target.type)
+      ["checkbox", "radio", "text", "select-one", "tel", "email"].includes(
+        event.target.type,
+      )
         ? event.target.parentNode
         : event.target
     ).getBoundingClientRect();
-    
-    const {
-      borderRadius = "0",
-      margin = "0",
-    }: CSSStyleDeclaration = getComputedStyle(event.target);
+
+    const { borderRadius = "0", margin = "0" }: CSSStyleDeclaration =
+      getComputedStyle(event.target);
 
     setState((prev) => ({
       ...prev,
@@ -51,7 +58,7 @@ export function Demo(): React.ReactElement {
         borderRadius,
         margin,
         opacity: "1",
-        transform: "scale(1)"
+        transform: "scale(1)",
       },
     }));
   }
@@ -59,7 +66,7 @@ export function Demo(): React.ReactElement {
   function updateFieldEntries(event: any) {
     return (name: keyof Fields, form: boolean | string) => {
       const node: HTMLInputElement = event.target;
-      const err: boolean = !node.validity.valid;
+      const err = !node.validity.valid;
       const msg: string = node.validationMessage;
 
       setState((prev) => ({
@@ -91,6 +98,7 @@ export function Demo(): React.ReactElement {
             className="switch-input sr-only"
             type="checkbox"
             onFocus={getFocusedStyles}
+            disabled
           />
           <span className="switch-toggle"></span>
           <span className="switch-label">

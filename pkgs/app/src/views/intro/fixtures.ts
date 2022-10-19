@@ -3,7 +3,7 @@ import { Attr, Step, Text } from "./types";
 export const _props: Attr = {
   anchor: {
     className: "view-action",
-    href: '/demo',
+    href: "/demo",
   },
   summary: {
     className: "view-summary",
@@ -21,5 +21,4 @@ export const _copy: Text = {
 
 export const _state: Step = {
   count: 0,
-}
-
+};

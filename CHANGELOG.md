@@ -1,7 +1,8 @@
+- cleanup
 - remove sample js from reference repo
 - checkin wip UI
 - includes app/dist index
-- updates dir pathnames  (#2)
+- updates dir pathnames (#2)
 - underscores unused arg
 - cleans up server/index.ts a smidge more
 - cleans up server index file

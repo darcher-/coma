@@ -28,17 +28,21 @@ export function Intro(): React.ReactElement {
               color: "#4b4b4b",
             }}>
             document.
-            <mark style={{
-              color: "rgb(0 0 0 / .333)"
-            }}>activeElement</mark>
+            <mark
+              style={{
+                color: "rgb(0 0 0 / .333)",
+              }}>
+              activeElement
+            </mark>
           </code>{" "}
           is updated.
         </p>
       </header>
-      <nav>
-        <Link to="/demo">
-          <span>Demo</span>
-          <ArrowRight color="#e74c3c" />
+      <nav className="button-group">
+        <Link className="button" to="/demo">
+          <span className="button-content">
+            <span className="button-text">Go to demo</span>
+          </span>
         </Link>
       </nav>
     </div>

@@ -8,8 +8,6 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "stylelint-config-idiomatic-order",
-    "./node_modules/prettier-stylelint/config.js",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -17,14 +15,13 @@
     "ecmaVersion": 2020,
     "project": "./tsconfig.json",
     "sourceType": "module",
-    "tsconfigRootDir": "./"
+    "tsconfigRootDir": "./",
+    "parserOptions.extraFileExtensions": ["**/*.scss"]
   },
-  "plugins": ["@typescript-eslint", "prettier", "stylelint-prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "root": true,
   "rules": {
     "no-console": 1,
-    "prettier/prettier": 2,
-    "indentation": 2,
-    "string-quotes": "single"
+    "prettier/prettier": 2
   }
 }
