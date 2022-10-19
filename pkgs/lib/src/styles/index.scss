@@ -1,5 +1,5 @@
 @charset 'utf-8';
-// @import "./reset";
+@import "./reset";
 
 *,
 ::before,
@@ -13,7 +13,6 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
   tab-size: 4;
-  height: 100%;
 }
 
 body {
@@ -21,7 +20,6 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
-  min-height: 100vh;
 }
 
 h1,
@@ -290,6 +288,10 @@ li {
   width: 100%;
   max-width: 720px;
   margin: 0 auto 2.5rem;
+
+  h1 {
+    font-size: 3rem;
+  }
 }
 
 .page-content {
@@ -311,7 +313,6 @@ li {
   box-shadow: -1rem 0 1rem -1rem hsla(0, 0%, 0%, 0.125),
     1rem 0 1rem -1rem hsla(0, 0%, 0%, 0.125);
   border-radius: 2px;
-  height: 100vh;
   padding: 2rem 3rem;
 }
 
@@ -524,6 +525,8 @@ select.input-field {
   background-repeat: no-repeat;
   background-position-x: calc(100% - 1rem);
   background-position-y: calc(50% + 2px);
+  justify-content: center;
+  align-items: center;
 }
 
 select.input-field::-ms-expand {
@@ -744,6 +747,7 @@ select.input-field[aria-invalid="true"] + .input-message {
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .button {
@@ -751,7 +755,8 @@ select.input-field[aria-invalid="true"] + .input-message {
   letter-spacing: inherit;
   border: none;
   padding: 0 12px;
-  min-height: 36px;
+  min-width: 10rem;
+  min-height: 42px;
   cursor: pointer;
   color: #2980b9;
   border-radius: 36px;
@@ -839,8 +844,8 @@ select.input-field[aria-invalid="true"] + .input-message {
   border-radius: 6rem;
 
   svg {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.6rem;
+    height: 1.6rem;
     display: inline-block;
   }
 

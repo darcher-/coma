@@ -1,3 +1,5 @@
+- remove sample js from reference repo
+- checkin wip UI
 - includes app/dist index
 - updates dir pathnames  (#2)
 - underscores unused arg

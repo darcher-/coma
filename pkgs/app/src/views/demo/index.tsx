@@ -20,7 +20,16 @@ export function Demo(): React.ReactElement {
     tracker: React.useRef(null),
   });
 
-  function getFocusedPosition(event: any) {
+  window.addEventListener('scroll', ((event) => 
+    setState((prev) => ({
+      ...prev,
+      focused: {
+        opacity: "0",
+        transform: "scale(.001)"
+      },
+    }))))
+
+  function getFocusedStyles(event: any) {
     const { top, left, width, height } = (
       ["checkbox", "radio", "text", "select-one", "tel", "email"].includes(event.target.type)
         ? event.target.parentNode
@@ -41,6 +50,8 @@ export function Demo(): React.ReactElement {
         height: `${height}px`,
         borderRadius,
         margin,
+        opacity: "1",
+        transform: "scale(1)"
       },
     }));
   }
@@ -63,7 +74,7 @@ export function Demo(): React.ReactElement {
     <>
       <header className="page-header">
         <nav>
-          <Link className="link-return" to="/" onFocus={getFocusedPosition}>
+          <Link className="link-return" to="/" onFocus={getFocusedStyles}>
             <svg role="img" focusable={false}>
               <use xlinkHref="#icon-back" />
             </svg>
@@ -79,7 +90,7 @@ export function Demo(): React.ReactElement {
           <input
             className="switch-input sr-only"
             type="checkbox"
-            onFocus={getFocusedPosition}
+            onFocus={getFocusedStyles}
           />
           <span className="switch-toggle"></span>
           <span className="switch-label">
@@ -108,7 +119,7 @@ export function Demo(): React.ReactElement {
                   href="#"
                   className="link"
                   title="An anchor title"
-                  onFocus={getFocusedPosition}>
+                  onFocus={getFocusedStyles}>
                   Link
                 </a>{" "}
                 within it to demonstrate the tab state between a variety of
@@ -138,7 +149,7 @@ export function Demo(): React.ReactElement {
                   value={`${state.fname.form}`}
                   minLength={2}
                   maxLength={50}
-                  onFocus={getFocusedPosition}
+                  onFocus={getFocusedStyles}
                   onChange={(event) =>
                     updateFieldEntries(event)(
                       "fname",
@@ -183,7 +194,7 @@ export function Demo(): React.ReactElement {
                   aria-describedby="lname-msg"
                   minLength={1}
                   maxLength={75}
-                  onFocus={getFocusedPosition}
+                  onFocus={getFocusedStyles}
                   onChange={(event) =>
                     updateFieldEntries(event)(
                       "lname",
@@ -231,7 +242,7 @@ export function Demo(): React.ReactElement {
                   aria-describedby="email-msg"
                   minLength={5}
                   maxLength={100}
-                  onFocus={getFocusedPosition}
+                  onFocus={getFocusedStyles}
                   onChange={(event) =>
                     updateFieldEntries(event)(
                       "email",
@@ -276,7 +287,7 @@ export function Demo(): React.ReactElement {
                   aria-describedby="phone-msg"
                   minLength={10}
                   maxLength={25}
-                  onFocus={getFocusedPosition}
+                  onFocus={getFocusedStyles}
                   onChange={(event) =>
                     updateFieldEntries(event)(
                       "phone",
@@ -327,7 +338,7 @@ export function Demo(): React.ReactElement {
                       value="yes"
                       checked={state.over21.form == true}
                       aria-describedby="confirm-msg"
-                      onFocus={getFocusedPosition}
+                      onFocus={getFocusedStyles}
                       onChange={(event) =>
                         updateFieldEntries(event)("over21", true)
                       }
@@ -352,7 +363,7 @@ export function Demo(): React.ReactElement {
                       value="no"
                       checked={state.over21.form == false}
                       aria-describedby="denied-msg"
-                      onFocus={getFocusedPosition}
+                      onFocus={getFocusedStyles}
                       onChange={(event) =>
                         updateFieldEntries(event)("over21", false)
                       }
@@ -399,7 +410,7 @@ export function Demo(): React.ReactElement {
                   className="input-field"
                   aria-invalid={state.gender.err}
                   aria-describedby="gender-msg"
-                  onFocus={getFocusedPosition}
+                  onFocus={getFocusedStyles}
                   onChange={(event) =>
                     updateFieldEntries(event)(
                       "gender",
@@ -453,7 +464,7 @@ export function Demo(): React.ReactElement {
                       aria-invalid={state.store.err}
                       aria-describedby="store-msg"
                       checked={state.store.form == true}
-                      onFocus={getFocusedPosition}
+                      onFocus={getFocusedStyles}
                       onChange={(event) =>
                         updateFieldEntries(event)(
                           "store",
@@ -497,12 +508,12 @@ export function Demo(): React.ReactElement {
                   role="button"
                   className="button"
                   id="form-submit"
-                  onFocus={getFocusedPosition}>
+                  onFocus={getFocusedStyles}>
                   <div className="button-content">
                     <svg className="button-icon" role="img" focusable={false}>
                       <use xlinkHref="#icon-beaker" />
                     </svg>
-                    <span className="button-text">Save</span>
+                    <span className="button-text">Submit</span>
                   </div>
                 </button>
               </div>
