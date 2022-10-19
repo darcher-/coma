@@ -1,8 +1,5 @@
-- tweaks
-- ui cleanup
-- cleanup
-- remove sample js from reference repo
-- checkin wip UI
+- more style tweaks
+- ui adjustments to include coma flying focus demo (#3)
 - includes app/dist index
 - updates dir pathnames (#2)
 - underscores unused arg
