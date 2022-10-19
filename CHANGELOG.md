@@ -1,0 +1,16 @@
+- ui cleanup
+- cleanup
+- remove sample js from reference repo
+- checkin wip UI
+- includes app/dist index
+- updates dir pathnames (#2)
+- underscores unused arg
+- cleans up server/index.ts a smidge more
+- cleans up server index file
+- ignores .DS_Store files again
+- removes .DS_Store files
+- cleans up build.ts more
+- updates build.ts structure
+- adjusts configurations to leverage eslint/babel/prettier/etc. (#1)
+- ignores .DS_Store files
+- initial source dump

@@ -8,14 +8,14 @@
     "moduleResolution": "Node",
     "noImplicitAny": true,
     "paths": {
-      "@coma-lib/*": ["pkg/*"]
+      "@coma/*": ["pkgs/*"]
     },
-    "types": ["node", "ts-node"],
     "removeComments": true,
     "resolveJsonModule": true,
     "strictNullChecks": true,
-    "target": "ES2017"
+    "target": "ES2020",
+    "types": ["node", "ts-node"]
   },
-  "exclude": ["node_modules", "**/node_modules/*", "**/dist", "esb"],
+  "exclude": ["node_modules", "**/node_modules/*"],
   "include": ["**/*"]
 }

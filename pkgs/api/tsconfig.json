@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "../../../dist/api",
+    "esModuleInterop": true
+  },
+  "extends": "../../tsconfig.json",
+  "types": ["cors", "express", "**/*.d.ts"]
+}

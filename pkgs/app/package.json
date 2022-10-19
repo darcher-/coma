@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@coma/lib": "1.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-is": "18.2.0",
+    "react-router-dom": "6.4.2",
+    "styled-components": "5.3.6"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "@types/styled-components": "5.1.26",
+    "react-is": "18.2.0"
+  },
+  "license": "UNLICENSED",
+  "main": "./src/index.tsx",
+  "name": "@coma/app",
+  "private": true,
+  "resolutions": {
+    "styled-components": "5"
+  },
+  "version": "1.0.0"
+}
