@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": "./",
+    "outDir": "../../../dist",
+  },
+  "extends": "../../tsconfig.json",
+  "types": ["/src/**/*.d.ts"]
+}

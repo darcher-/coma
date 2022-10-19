@@ -1,21 +1,22 @@
 FROM node:14.15.5-alpine
 
-WORKDIR /usr/src/app
+ENV COMA /usr/src
+WORKDIR $COMA
 
-COPY ./package.json .
-COPY ./package-lock.json .
-COPY ./pkg/app/package.json ./pkg/app/
-COPY ./pkg/res/package.json ./pkg/res/
-COPY ./pkg/svr/package.json ./pkg/svr/
+COPY ["package.json", "yarn.lock", "package-lock.json", "$COMA/"]
+COPY ["pkgs/app/package.json", "$COMA/app"]
+COPY ["pkgs/api/package.json", "$COMA/api"]
+COPY ["pkgs/lib/package.json", "$COMA/lib"]
 RUN yarn
 
 COPY . .
 
 # Build app
-RUN yarn build
+RUN ["yarn", "log"]
+RUN ["yarn", "build"]
 
 # Port
-EXPOSE 3000
+EXPOSE 8080
 
 # Serve
-CMD [ "yarn", "serve" ]
+CMD ["yarn", "serve"]
