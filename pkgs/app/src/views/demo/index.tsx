@@ -89,7 +89,7 @@ export function Demo(): React.ReactElement {
           </Link>
         </nav>
 
-        <h1>Follow Focus Demo</h1>
+        <h1>Coma | Follow Focus</h1>
 
         <label
           className="switch input"
@@ -102,7 +102,7 @@ export function Demo(): React.ReactElement {
           />
           <span className="switch-toggle"></span>
           <span className="switch-label">
-            <span className="switch-state-on">Enable</span>
+            <span className="switch-state-on">Enable </span>
             <span className="switch-state-off">Disable</span>
             <span className="switch-text">Focus Follower</span>
             <span className="sr-only">with spacebar key</span>

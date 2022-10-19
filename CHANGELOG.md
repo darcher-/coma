@@ -1,3 +1,4 @@
+- ui cleanup
 - cleanup
 - remove sample js from reference repo
 - checkin wip UI
