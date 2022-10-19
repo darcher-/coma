@@ -87,27 +87,28 @@ export function Demo(): React.ReactElement {
             </svg>
             <span>Back</span>
           </Link>
+
+          <label
+            className="switch input"
+            title="toggle with spacebar key while focused on element">
+            <input
+              className="switch-input sr-only"
+              type="checkbox"
+              onFocus={getFocusedStyles}
+              checked={true}
+              disabled
+            />
+            <span className="switch-label">
+              <span className="switch-state-off">Disable</span>
+              <span className="switch-state-on">Enable </span>
+            </span>
+            <span className="switch-toggle"></span>
+          </label>
         </nav>
 
-        <h1>Coma | Follow Focus</h1>
-
-        <label
-          className="switch input"
-          title="toggle with spacebar key while focused on element">
-          <input
-            className="switch-input sr-only"
-            type="checkbox"
-            onFocus={getFocusedStyles}
-            disabled
-          />
-          <span className="switch-toggle"></span>
-          <span className="switch-label">
-            <span className="switch-state-on">Enable </span>
-            <span className="switch-state-off">Disable</span>
-            <span className="switch-text">Focus Follower</span>
-            <span className="sr-only">with spacebar key</span>
-          </span>
-        </label>
+        <h1>
+          <span>Coma</span> <small>Focus. Follow.</small>
+        </h1>
       </header>
 
       <section className="page-content">
